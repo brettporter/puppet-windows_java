@@ -97,7 +97,8 @@ define windows_java::jdk(
       $jreInstallPath = $jre_install_path
     }
     file{$temp_target:
-      ensure => directory,
+      ensure  => directory,
+      replace => no,
     }
 
     $filename = filename($remoteSource)
